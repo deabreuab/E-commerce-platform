@@ -34,6 +34,8 @@ Este proyecto es una tienda online desarrollada como parte de una prueba técnic
 
 ### 🔗 Puedes revisar el sitio ahora mismo en https://e-commerce-platform-mocha.vercel.app/ 
 
+---
+
 ## Funcionalidades implementadas
 
 - **Home con sección hero y categorías destacadas.**
