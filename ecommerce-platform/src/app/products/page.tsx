@@ -4,7 +4,6 @@ import { Card } from "../components/Card";
 import { useProducts } from "../hooks/useProducts";
 import { FiltersSidebar } from "../components/FiltersSidebar";
 import {
-  ArrowLeftFromLine,
   ArrowLeftToLine,
   ArrowRightToLine,
 } from "lucide-react";
