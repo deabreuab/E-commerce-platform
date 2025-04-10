@@ -2,7 +2,7 @@
 
 Este proyecto es una tienda online desarrollada como parte de una prueba técnica. Utiliza la [Fake Store API](https://fakestoreapi.com/) para mostrar productos y permite filtrarlos por categoría, ver detalles individuales y navegar entre páginas.
 
-## 🚀 Instrucciones para ejecutar el proyecto localmente
+## Instrucciones para ejecutar el proyecto localmente
 
 1. Clona el repositorio:
 
@@ -32,7 +32,7 @@ Este proyecto es una tienda online desarrollada como parte de una prueba técnic
 
 ---
 
-### 🔗 Puedes revisar el sitio ahora mismo en https://e-commerce-platform-mocha.vercel.app/ 🔗
+### 🔗 Puedes revisar el sitio ahora mismo en https://e-commerce-platform-mocha.vercel.app/ 
 
 ## Funcionalidades implementadas
 
