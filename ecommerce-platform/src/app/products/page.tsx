@@ -20,15 +20,12 @@ type Product = {
 export default function ProductsPage() {
   const { data: products, isLoading, isError } = useProducts();
 
-  // Filtros
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [sortOrder, setSortOrder] = useState<"asc" | "desc" | null>(null);
 
-  // Paginación
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 8;
 
-  // Aplica filtros
   let filteredProducts = products || [];
   if (selectedCategory) {
     filteredProducts = filteredProducts.filter(
@@ -36,19 +33,17 @@ export default function ProductsPage() {
     );
   }
 
-  // Aplica orden por precio
   if (sortOrder === "asc") {
     filteredProducts = [...filteredProducts].sort((a, b) => a.price - b.price);
   } else if (sortOrder === "desc") {
     filteredProducts = [...filteredProducts].sort((a, b) => b.price - a.price);
   }
 
-  // Categorías únicas para el filtro
   const categories: string[] = Array.from(
     new Set(products?.map((p: Product) => p.category))
   );
 
-  // Paginación con productos ya filtrados
+
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = filteredProducts.slice(
@@ -57,7 +52,6 @@ export default function ProductsPage() {
   );
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 
-  // Controles de paginación
   const goToNextPage = () => {
     if (currentPage < totalPages) {
       setCurrentPage((prev) => prev + 1);
@@ -70,7 +64,6 @@ export default function ProductsPage() {
     }
   };
 
-  // Reset de filtros
   const resetFilters = () => {
     setSelectedCategory(null);
     setSortOrder(null);
@@ -79,7 +72,7 @@ export default function ProductsPage() {
 
   return (
     <main className="flex min-h-screen">
-      {/* Aside: filtros */}
+
       <FiltersSidebar
         selectedCategory={selectedCategory}
         setSelectedCategory={setSelectedCategory}
@@ -90,7 +83,7 @@ export default function ProductsPage() {
         totalVisible={filteredProducts.length}
       />
 
-      {/*productos */}
+
       <section className="flex-1 p-4 md:ml-1/5">
         {isLoading && <p>Cargando productos...</p>}
         {isError && <p>Error al cargar los productos.</p>}
@@ -105,7 +98,6 @@ export default function ProductsPage() {
           ))}
         </div>
 
-        {/* Paginación */}
         {totalPages > 1 && (
           <div className="flex justify-center items-center gap-4 mt-8">
             <button
